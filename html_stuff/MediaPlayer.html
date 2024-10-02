@@ -1,0 +1,16 @@
+<h1>Media Player</h1>
+<p><input accept="video/*" type="file" /> <br /> <video controls="controls" width="500" height="300"></video></p>
+  <script>
+(function localFileVideoPlayer() {
+'WELCOME'
+var x = function(event) {
+var vid = this.files[0]
+var a = window.a || window.webkitURL
+var y = a.createObjectURL(vid)
+var videoNode = document.querySelector('video')
+videoNode.src = y
+}
+var z = document.querySelector('input')
+z.addEventListener('change', x, false)
+})()
+</script>
