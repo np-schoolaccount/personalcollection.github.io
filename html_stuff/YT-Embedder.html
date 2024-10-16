@@ -1,25 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <h1>Youtube Embedder</h1>
 <p>
-<input type="text" id="YoutubeID" name="TextInput" placeholder="Youtube Video ID Here">
- <button id="EmbedButton" onclick="Embed();">Embed</button>
+  <input
+    type="text"
+    id="YoutubeID"
+    name="TextInput"
+    placeholder="Youtube Video ID Here"
+  />
+  <button id="EmbedButton" onclick="Embed();">Embed</button>
 </p>
 <p id="para">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-CeUFVKRhOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen name="Video" id="YT_Vid"></iframe>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/-CeUFVKRhOA"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    name="Video"
+    id="YT_Vid"
+  ></iframe>
 </p>
 
-
 <script>
-function Embed(){
-  var ID = document.getElementById('YoutubeID').value;
-  var OldVid = document.getElementById('YT_Vid');
-  OldVid.remove();
-  var NewVid = document.createElement("iframe");
-  NewVid.width = "560";
-  NewVid.height = "315";
-  NewVid.src = ("https://www.youtube.com/embed/" + ID);
-  NewVid.id = "YT_Vid";
-	document.getElementById("para").appendChild(NewVid);
+  function Embed() {
+    var ID = document.getElementById("YoutubeID").value
+    var OldVid = document.getElementById("YT_Vid")
+    OldVid.remove()
+    var NewVid = document.createElement("iframe")
+    NewVid.width = "560"
+    NewVid.height = "315"
+    NewVid.src = "https://www.youtube.com/embed/" + ID
+    NewVid.id = "YT_Vid"
+    NewVid.allow = "fullscreen"
+    document.getElementById("para").appendChild(NewVid)
   }
 </script>
