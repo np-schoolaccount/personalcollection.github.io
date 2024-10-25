@@ -1,0 +1,41 @@
+<!doctype html>
+
+<h1>Site Embedder</h1>
+<p>
+  <input
+    type="text"
+    id="YoutubeID"
+    name="TextInput"
+    placeholder="Site Here"
+  />
+  <button id="EmbedButton" onclick="Embed();">Embed</button>
+</p>
+<p id="para">
+  <iframe
+    width="560"
+    height="315"
+    src="https://google.com"
+    title="SiteEmbed"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    name="Video"
+    id="YT_Vid"
+  ></iframe>
+</p>
+
+<script>
+  function Embed() {
+    var ID = document.getElementById("YoutubeID").value
+    var OldVid = document.getElementById("YT_Vid")
+    OldVid.remove()
+    var NewVid = document.createElement("embed")
+    NewVid.width = "560"
+    NewVid.height = "315"
+    NewVid.src = ID
+    NewVid.id = "YT_Vid"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+    document.getElementById("para").appendChild(NewVid)
+  }
+</script>
