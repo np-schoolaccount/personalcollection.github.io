@@ -2,3 +2,11 @@
 <p>  <a title="MediaPlayer" href="/personalcollection.github.io/html_stuff/MediaPlayer.html">Media Player</a>  </p>
 <p>  <a title="YT-Embedder" href="/personalcollection.github.io/html_stuff/YT-Embedder.html">YT Embedder</a>  </p>
 <p>  <a title="YT-Embedder" href="/personalcollection.github.io/html_stuff/Site-Embed.html">Site Embedder(untested)</a>  </p>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+$(window).on("beforeunload", function() { 
+        return confirm("Do you really want to close?") 
+    }
+);
+</script>
