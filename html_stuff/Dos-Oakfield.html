@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>My DOS Game (Fullscreen)</title>
-  <link rel="stylesheet" href="dos/js-dos.css">
+  <link rel="stylesheet" href="/personalcollection.github.io/dos/js-dos.css">
   <style>
     html, body {
       margin: 0;
@@ -46,15 +46,15 @@
   <button id="fs-btn" onclick="goFullscreen()">Fullscreen</button>
   <div id="dosbox"></div>
 
-  <script src="dos/js-dos.js"></script>
+  <script src="/personalcollection.github.io/dos/js-dos.js"></script>
   <script>
     let dosInstance;
 
     Dos(document.getElementById("dosbox"), {
-      wdosboxUrl: "dos/wdosbox.js"
+      wdosboxUrl: "/personalcollection.github.io/dos/wdosbox.js"
     }).then(dos => {
       dosInstance = dos;
-      dos.run("doszips/Oakflat_Nuclear_Power_Plant_Simulator_The_1992.zip");  // replace with your zip file
+      dos.run("/personalcollection.github.io/doszips/Oakflat_Nuclear_Power_Plant_Simulator_The_1992.zip");  // replace with your zip file
     });
 
     function goFullscreen() {
