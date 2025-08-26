@@ -1,24 +1,40 @@
-<!doctype html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <style>
-         html, body, #jsdos {
-             width: 100%;
-             height: 100%;
-             margin: 0;
-             padding: 0;
-         }
-        </style>
-        <script src="/personalcollection.github.io/dos/js-dos.js"></script>
-        <link href="/personalcollection.github.io/dos/js-dos.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="jsdos" />
-        <script>
-         emulators.pathPrefix = "/personalcollection.github.io/dos/";
-         Dos(document.getElementById("jsdos"))
-             .run("/personalcollection.github.io/doszips/TheOakf.zip");
-        </script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS-DOS Game</title>
+    <script src="dos/js-dos.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #dosbox {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="dosbox"></div>
+    <script>
+        const canvas = document.getElementById("dosbox");
+
+        Dos(canvas, {
+            wdosboxUrl: "dos/wdosbox.js",
+            onload: function (dos) {
+                // Replace 'game.zip' with your actual ZIP file path
+                dos.run("/personalcollection.github.io/doszips/TheOakf.zip").then(() => {
+                    console.log("Game started successfully!");
+                }).catch((err) => {
+                    console.error("Failed to run game:", err);
+                });
+            }
+        });
+    </script>
+</body>
 </html>
