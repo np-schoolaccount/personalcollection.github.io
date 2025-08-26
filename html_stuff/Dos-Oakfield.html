@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JS-DOS Game</title>
-    <script src="dos/js-dos.js"></script>
+    <script src="/personalcollection.github.io/dos/js-dos.js"></script>
     <style>
         html, body {
             height: 100%;
@@ -25,7 +25,7 @@
         const canvas = document.getElementById("dosbox");
 
         Dos(canvas, {
-            wdosboxUrl: "dos/wdosbox.js",
+            wdosboxUrl: "/personalcollection.github.io/dos/wdosbox.js",
             onload: function (dos) {
                 // Replace 'game.zip' with your actual ZIP file path
                 dos.run("/personalcollection.github.io/doszips/TheOakf.zip").then(() => {
