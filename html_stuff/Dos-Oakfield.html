@@ -1,65 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>My DOS Game (Fullscreen)</title>
-  <link rel="stylesheet" href="/personalcollection.github.io/dos/js-dos.css">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;     /* center vertically */
-    }
-    #dosbox {
-      /* Keep 4:3 aspect ratio: height = width * 0.75 */
-      width: 100vw;
-      height: calc(100vw * 0.75);
-      max-height: 100vh;
-      max-width: calc(100vh * (4/3));
-      box-shadow: 0 0 20px #000;
-    }
-    /* optional fullscreen button */
-    #fs-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-    #fs-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-  </style>
-</head>
-<body>
-  <button id="fs-btn" onclick="goFullscreen()">Fullscreen</button>
-  <div id="dosbox"></div>
-
-  <script src="/personalcollection.github.io/dos/js-dos.js"></script>
-  <script>
-    let dosInstance;
-
-    Dos(document.getElementById("dosbox"), {
-      wdosboxUrl: "/personalcollection.github.io/dos/wdosbox.js"
-    }).then(dos => {
-      dosInstance = dos;
-      dos.run("/personalcollection.github.io/doszips/TheOakf.zip");  // replace with your zip file
-    });
-
-    function goFullscreen() {
-      if (dosInstance) dosInstance.fullscreen();
-    }
-  </script>
-</body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <style>
+         html, body, #jsdos {
+             width: 100%;
+             height: 100%;
+             margin: 0;
+             padding: 0;
+         }
+        </style>
+        <script src="/personalcollection.github.io/dos/js-dos.js"></script>
+        <link href="/personalcollection.github.io/dos/js-dos.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="jsdos" />
+        <script>
+         emulators.pathPrefix = "/personalcollection.github.io/dos/";
+         Dos(document.getElementById("jsdos"))
+             .run("/personalcollection.github.io/doszips/TheOakf.zip");
+        </script>
+    </body>
 </html>
