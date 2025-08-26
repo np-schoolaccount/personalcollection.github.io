@@ -1,40 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>JS-DOS Game</title>
-    <script src="/personalcollection.github.io/dos/js-dos.js"></script>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-        }
-        #dosbox {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>My DOS Game</title>
+  <link rel="stylesheet" href="https://js-dos.com/6.22/current/js-dos.css">
+  <style>
+    body { background: #111; margin: 0; padding: 0; text-align: center; }
+    #dosbox { width: 800px; height: 600px; margin: 40px auto; }
+  </style>
 </head>
 <body>
-    <div id="dosbox"></div>
-    <script>
-        const canvas = document.getElementById("dosbox");
+  <div id="dosbox"></div>
 
-        Dos(canvas, {
-            wdosboxUrl: "/personalcollection.github.io/dos/wdosbox.js",
-            onload: function (dos) {
-                // Replace 'game.zip' with your actual ZIP file path
-                dos.run("/personalcollection.github.io/doszips/TheOakf.zip").then(() => {
-                    console.log("Game started successfully!");
-                }).catch((err) => {
-                    console.error("Failed to run game:", err);
-                });
-            }
-        });
-    </script>
+  <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <script>
+    Dos(document.getElementById("dosbox"), {
+      wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js"
+    }).then(dos => {
+      dos.run("/personalcollection.github.io/doszips/TheOakf.zip");  // your game or program archive
+    });
+  </script>
 </body>
 </html>
